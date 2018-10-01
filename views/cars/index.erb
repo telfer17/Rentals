@@ -1,0 +1,18 @@
+<h1>Cars</h1>
+
+<table>
+  <tr>
+    <th>Make</th>
+    <th>Features</th>
+    <th>Image</th>
+    <th></th>
+  </tr>
+  <% for car in @cars %>
+  <tr>
+    <td><a href="/cars/<%= car.id %>"><%= car.make %></a></td>
+    <td><a href="/cars/<%= car.id %>"><%= car.features %></a></td>
+    <td><a href="/cars/<%= car.id %>"><%= car.image %></a></td> 
+    <td>|</td>
+  </tr>
+  <% end %>
+</table>

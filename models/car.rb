@@ -29,6 +29,13 @@ class Car
     @id = results.first()['id'].to_i
   end
 
+  def self.all()
+    sql = "SELECT * FROM cars"
+    values = []
+    results = SqlRunner.run(sql, values)
+    return results.map { |car| Car.new(car) }
+  end
+
   def self.delete_all()
     sql = "DELETE FROM cars"
     SqlRunner.run(sql)

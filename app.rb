@@ -4,6 +4,6 @@ require_relative('controllers/cars_controller')
 require_relative('controllers/customers_controller')
 require_relative('controllers/rentals_controller')
 
-get '/index' do
-  erb(:index)
+get '/' do
+  erb(:home)
 end

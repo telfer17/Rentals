@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cars</title>
+  <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+<main class="flex flex--row">
+  <nav>
+    <ul>
+      <li>
+        <a href="/cars/index">Cars</a>
+      </li>
+      <li>
+        <a href="/customers/index">Customers</a>
+      </li>
+      <li>
+        <a href="/rentals/index">Rentals</a>
+      </li>
+    </ul>
+  </nav>
+  <section id="content">
+  <%= yield %>
+  </section>
+  </main>
+</body>
+</html>

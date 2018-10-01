@@ -1,0 +1,14 @@
+<h1>Customers</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  <% for customer in @customers %>
+  <tr>
+    <td><a href="/customers/<%= customer.id %>"><%= customer.name %></a></td>
+    <td>|</td>
+  </tr>
+  <% end %>
+</table>
