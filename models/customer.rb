@@ -3,28 +3,26 @@ require_relative('../db/sql_runner')
 class Customer
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :funds
+  attr_accessor :first_name, :last_name
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @first_name = options['first_name']
     @last_name = options['last_name']
-    @funds = options['funds'].to_i
   end
 
   def save()
     sql = "INSERT INTO customers
     (
       first_name,
-      last_name,
-      funds
+      last_name
     )
     VALUES
     (
       $1, $2, $3
     )
     RETURNING id"
-    values = [@first_name, @last_name, @funds]
+    values = [@first_name, @last_name]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
@@ -34,14 +32,13 @@ class Customer
     SET
     (
       first_name,
-      last_name,
-      funds
+      last_name
     ) =
     (
-      $1, $2, $3
+      $1, $2
     )
-    WHERE id = $4"
-    values = [@first_name, @last_name, @funds, @id]
+    WHERE id = $3"
+    values = [@first_name, @last_name, @id]
     SqlRunner.run(sql, values)
   end
 

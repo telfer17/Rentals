@@ -3,12 +3,11 @@ require_relative('../db/sql_runner')
 class Car
 
   attr_reader :id
-  attr_accessor :make, :price, :features, :image
+  attr_accessor :make, :features, :image
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @make = options['make']
-    @price = options['price'].to_i
     @features = options['features']
     @image = options['image']
   end
@@ -17,16 +16,15 @@ class Car
     sql = "INSERT INTO cars
     (
       make,
-      price,
       features,
       image
     )
     VALUES
     (
-      $1, $2, $3, $4
+      $1, $2, $3
     )
     RETURNING id"
-    values = [@make, @price, @features, @image]
+    values = [@make, @features, @image]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

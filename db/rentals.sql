@@ -6,7 +6,6 @@ CREATE TABLE cars
 (
   id SERIAL4 primary key,
   make VARCHAR(255),
-  price INT4,
   features VARCHAR(255),
   image VARCHAR(255)
 );
@@ -15,8 +14,7 @@ CREATE TABLE customers
 (
   id SERIAL4 primary key,
   first_name VARCHAR(255),
-  last_name VARCHAR(255),
-  funds INT4
+  last_name VARCHAR(255)
 );
 
 CREATE TABLE rentals
