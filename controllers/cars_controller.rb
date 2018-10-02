@@ -18,7 +18,7 @@ post '/cars' do
 
   file = params[:image][:tempfile]
 
-  File.open("./public/images/#{params[:image][:filename]}", 'wb') do |f|
+  File.open("./public/#{params[:image][:filename]}", 'wb') do |f|
     f.write(file.read)
   end
 

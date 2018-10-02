@@ -10,25 +10,29 @@ Car.delete_all()
 car1 = Car.new({
   "make" => "BMW",
   "features" => "Automatic gearbox",
-  "image" => "/images/bmw.jpg"
+  "status" => "rented",
+  "image" => "/bmw.jpg"
   })
 
 car2 = Car.new({
   "make" => "Skoda",
   "features" => "Parking sensors",
-  "image" => "/images/skoda.jpg"
+  "status" => "rented",
+  "image" => "/skoda.jpg"
   })
 
 car3 = Car.new({
   "make" => "Van",
   "features" => "Excellent storage space",
-  "image" => "/images/van.jpg"
+  "status" => "rented",
+  "image" => "/van.jpg"
   })
 
 car4 = Car.new({
   "make" => "Vauxhall",
   "features" => "Automatic gearbox",
-  "image" => "/images/vauxhall.jpg"
+  "status" => "rented",
+  "image" => "/vauxhall.jpg"
   })
 
 car1.save()

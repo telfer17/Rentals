@@ -33,6 +33,14 @@ class Rental
     return results.map { |rental| Rental.new(rental) }
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM rentals
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run(sql, values)
+    return Rental.new(results.first)
+  end
+
   def car()
     sql = "SELECT * FROM cars
     WHERE id = $1"
@@ -47,6 +55,13 @@ class Rental
     values = [@customer_id]
     results = SqlRunner.run(sql, values)
     return Customer.new(results.first)
+  end
+
+  def self.delete(id)
+    sql = "DELETE FROM rentals
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
   end
 
   def self.delete_all()

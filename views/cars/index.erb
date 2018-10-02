@@ -10,12 +10,14 @@
   <tr>
     <th>Make</th>
     <th>Features</th>
+    <th>Status</th>
     <th>Image</th>
   </tr>
   <% for car in @cars %>
   <tr>
     <td><%= car.make %></td>
     <td><%= car.features %></td>
+    <td><%= car.status %></td>
     <td class="car_image"><img src="<%= car.image %>"/></td>
   </tr>
   <% end %>

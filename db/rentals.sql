@@ -7,6 +7,7 @@ CREATE TABLE cars
   id SERIAL4 primary key,
   make VARCHAR(255),
   features VARCHAR(255),
+  status VARCHAR(255),
   image VARCHAR(255)
 );
 

@@ -11,9 +11,14 @@
     <td><a href="/customers"><%= rental.customer.full_name %></a></td>
     <td>|</td>
     <td><a href="/cars"><%= rental.car.make %></a></td>
+    <td>|</td>
+    <td><form action="/rentals/<%= rental.id %>/delete" method="POST">
+      <input class="btn btn--returns" type="submit" value="Return Vehicle" />
+    </form></td>
   </tr>
   <% end %>
 </table>
+
 
 <h2>New Rental</h2>
 
