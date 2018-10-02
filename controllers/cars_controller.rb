@@ -15,6 +15,14 @@ end
 
 post '/cars' do
   car = Car.new(params)
+
+  file = params[:image][:tempfile]
+
+  File.open("./public/images/#{params[:image][:filename]}", 'wb') do |f|
+    f.write(file.read)
+  end
+
+  car.image = params[:image][:filename]
   car.save()
   redirect to("/cars")
 end
