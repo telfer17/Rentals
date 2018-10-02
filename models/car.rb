@@ -9,7 +9,7 @@ class Car
     @id = options['id'].to_i if options['id']
     @make = options['make']
     @features = options['features']
-    @status = options['status']
+    @status = options['status'].upcase
     @image = options['image']
   end
 
@@ -37,7 +37,7 @@ class Car
     results = SqlRunner.run(sql, values)
     return results.map { |car| Car.new(car) }
   end
-  
+
   def self.find(id)
     sql = "SELECT * FROM cars
     WHERE id = $1"

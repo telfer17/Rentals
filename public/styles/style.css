@@ -1,7 +1,8 @@
 body {
   background: white url('/images/white_background.jpg');
   background-size: 100%;
-  background-repeat: no-repeat;
+  
+  font-family: 'Gill Sans / Gill Sans MT', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -10,13 +11,99 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 1.8em;
+  font-size: 1.6em;
   color: black;
   margin-bottom: 20px;
+}
+
+a, a:link, a:visited {
+  color: #6a6f77;
+  text-decoration: none;
+}
+
+a:hover, a:active, a:focus {
+  color: #303133;
 }
 
 nav {
   padding: 0px;
   margin: 0px;
   padding-right: 25px;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  border-left: 2px solid #6a6f77;
+  padding-left: 25px;
+  font-family: 'Gill Sans / Gill Sans MT', sans-serif;
+}
+
+.car_image img {
+    width:450px; /* you can use % */
+    height: auto;
+    border: 1px solid #4f5051;
+    margin-top: 20px;
+}
+
+
+/* TABLES */
+
+td, th {
+  text-align: left;
+}
+
+td {
+  padding: 10px 20px 0px 0px;
+}
+
+th {
+  padding: 0px 20px 10px 0px;
+  border-bottom: 2px solid #4f5051;
+}
+
+table {
+  border-collapse: collapse;
+  margin-bottom: 30px;
+}
+
+
+/* FORMS */
+
+input[type="submit"] {
+  text-transform: uppercase;
+}
+
+select {
+ width: 160px;
+ padding: 5px 35px 5px 5px;
+ margin: 10px 0;
+ font-size: 0.85em;
+ -webkit-appearance: none;
+ font-family: 'Gill Sans / Gill Sans MT', sans-serif;
+ border: 1px solid #4f5051;
+ display: block;
+}
+
+:focus {
+  outline-color: transparent;
+  outline-style: none;
 }
