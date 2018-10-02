@@ -1,0 +1,22 @@
+body {
+  background: white url('/images/white_background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0px;
+  padding: 0px;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: black;
+  margin-bottom: 20px;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+}
