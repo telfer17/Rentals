@@ -9,5 +9,5 @@ also_reload('../models/*' )
 get '/rentals' do
   @cars = Car.all
   @customers = Customer.all
-  erb ( :"rentals/index" )
+  erb (:"rentals/index")
 end
