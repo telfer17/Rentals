@@ -9,26 +9,26 @@ Car.delete_all()
 
 car1 = Car.new({
   "make" => "BMW",
-  "image" => "../public/images/bmw.jpg",
-  "features" => "Automatic gearbox"
+  "features" => "Automatic gearbox",
+  "image" => "/images/bmw.jpg"
   })
 
 car2 = Car.new({
   "make" => "Skoda",
-  "image" => "../public/images/skoda.jpg",
-  "features" => "Parking sensors"
+  "features" => "Parking sensors",
+  "image" => "/images/skoda.jpg"
   })
 
 car3 = Car.new({
   "make" => "Van",
-  "image" => "../public/images/van.jpg",
-  "features" => "Excellent storage space"
+  "features" => "Excellent storage space",
+  "image" => "/images/van.jpg"
   })
 
 car4 = Car.new({
   "make" => "Vauxhall",
-  "image" => "../public/images/vauxhall.jpg",
-  "features" => "DAB radio"
+  "features" => "Automatic gearbox",
+  "image" => "/images/vauxhall.jpg"
   })
 
 car1.save()
@@ -85,17 +85,6 @@ rental1.save()
 rental2.save()
 rental3.save()
 rental4.save()
-
-# UPDATE CUSTOMER DETAILS
-# customer1.first_name = "James"
-# customer1.update()
-
-# DELETE CAR DETAILS
-# car3.delete()
-
-# DELETE CUSTOMER DETAILS
-# customer2.delete()
-
 
 binding.pry
 nil

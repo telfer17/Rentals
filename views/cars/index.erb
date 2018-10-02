@@ -5,14 +5,12 @@
     <th>Make</th>
     <th>Features</th>
     <th>Image</th>
-    <th></th>
   </tr>
   <% for car in @cars %>
   <tr>
-    <td><a href="/cars/<%= car.id %>"><%= car.make %></a></td>
-    <td><a href="/cars/<%= car.id %>"><%= car.features %></a></td>
-    <td><a href="/cars/<%= car.id %>"><%= car.image %></a></td> 
-    <td>|</td>
+    <td><%= car.make %></td>
+    <td><%= car.features %></td>
+    <td class="car_image"><img src="<%= car.image %>"/></td>
   </tr>
   <% end %>
 </table>

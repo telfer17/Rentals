@@ -1,0 +1,13 @@
+<h1>New Rental</h1>
+
+<p class="btn--wrapper">
+  <a class="btn btn--action" href="/rentals/new">New rental</a>
+</p>
+
+<ul>
+  <% for rental in @rentals %>
+  <li>
+  <p><%= rental.customer.full_name %> "leased"<%= rental.car.make %> </p>
+  </li>
+  <% end %>
+</ul>

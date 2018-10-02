@@ -1,0 +1,13 @@
+<h1>Update Customer Details</h1>
+
+<form method="post" action="/customers/<%= @customer.id %>">
+  <label for ="first-name">First Name:</label>
+  <input id="first-name" type="text" name="first_name" value="<%= @customer.first_name %>" required/>
+  <p></p>
+
+  <label for ="last-name">Last Name:</label>
+  <input id="last-name" type="text" name="last_name" value="<%= @customer.last_name %>" required/>
+  <p></p>
+
+  <input type="submit" value="Change Order" />
+</form>

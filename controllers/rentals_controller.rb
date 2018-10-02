@@ -7,7 +7,18 @@ require_relative('../models/rental.rb')
 also_reload('../models/*' )
 
 get '/rentals' do
+  @rentals = Rental.all
+  erb ( :"rentals/index" )
+end
+
+get '/rentals/new' do
   @cars = Car.all
   @customers = Customer.all
-  erb (:"rentals/index")
+  erb (:"rentals/new")
+end
+
+post '/rentals' do
+  rental = Rental.new(params)
+  rental.save()
+  redirect to("/rentals")
 end

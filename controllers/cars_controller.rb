@@ -10,7 +10,7 @@ end
 
 get '/cars/new' do
   @cars = Car.all
-  erb(:"cars/new")
+  erb(:"cars/new_car")
 end
 
 post '/cars' do
