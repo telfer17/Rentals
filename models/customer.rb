@@ -54,11 +54,14 @@ class Customer
   end
 
   def self.find(id)
-    sql = "SELECT * FROM customers
-    WHERE id = $1"
+    sql = "SELECT * FROM customers WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return Customer.new(results.first)
+  end
+
+  def find_cars
+    sql = ""
   end
 
   def self.delete_all()
@@ -67,8 +70,7 @@ class Customer
   end
 
   def self.delete(id)
-    sql = "DELETE FROM customers
-    WHERE id = $1"
+    sql = "DELETE FROM customers WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

@@ -25,6 +25,7 @@ post '/cars' do
 end
 
 post '/cars/:id/delete' do
-  Car.delete(params[:id])
+  car = Car.find(params[:id])
+  car.delete()
   redirect ("/cars")
 end

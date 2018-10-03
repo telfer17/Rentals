@@ -21,6 +21,6 @@ CREATE TABLE customers
 CREATE TABLE rentals
 (
   id SERIAL4 primary key,
-  car_id INT4 references cars(id),
-  customer_id INT4 references customers(id)
+  car_id INT4 references cars(id) ON DELETE CASCADE,
+  customer_id INT4 references customers(id) ON DELETE CASCADE
 );

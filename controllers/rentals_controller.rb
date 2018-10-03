@@ -27,7 +27,7 @@ end
 
 post '/rentals/:id/delete' do
   rental = Rental.find(params[:id])
-  car = rental.car
+  car = rental.car()
   car.return_car(car.id)
   Rental.delete(rental.id)
   redirect ("/rentals")

@@ -31,6 +31,7 @@ post '/customers' do
 end
 
 post '/customers/:id/delete' do
-  Customer.delete(params[:id])
+  customer = Customer.find(params[:id])
+  customer.delete()
   redirect ("/customers")
 end

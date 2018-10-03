@@ -39,8 +39,7 @@ class Car
   end
 
   def self.find(id)
-    sql = "SELECT * FROM cars
-    WHERE id = $1"
+    sql = "SELECT * FROM cars WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return Car.new(results.first)
@@ -64,8 +63,7 @@ class Car
   end
 
   def self.delete(id)
-    sql = "DELETE FROM cars
-    WHERE id = $1"
+    sql = "DELETE FROM cars WHERE id = $1"
     values = [@id]
     SqlRunner.run(sql, values)
   end

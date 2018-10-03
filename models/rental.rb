@@ -42,24 +42,21 @@ class Rental
   end
 
   def car()
-    sql = "SELECT * FROM cars
-    WHERE id = $1"
+    sql = "SELECT * FROM cars WHERE id = $1"
     values = [@car_id]
     results = SqlRunner.run(sql, values)
     return Car.new(results.first)
   end
 
   def customer()
-    sql = "SELECT * FROM customers
-    WHERE id = $1"
+    sql = "SELECT * FROM customers WHERE id = $1"
     values = [@customer_id]
     results = SqlRunner.run(sql, values)
     return Customer.new(results.first)
   end
 
   def self.delete(id)
-    sql = "DELETE FROM rentals
-    WHERE id = $1"
+    sql = "DELETE FROM rentals WHERE id = $1"
     values = [id]
     SqlRunner.run(sql, values)
   end
