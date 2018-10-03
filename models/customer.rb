@@ -60,8 +60,11 @@ class Customer
     return Customer.new(results.first)
   end
 
-  def find_cars
-    sql = ""
+  def find_car()
+    sql = "SELECT cars.* FROM cars INNER JOIN rentals ON cars.id = rentals.car_id WHERE rentals.customer_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |car| Car.new(car) }
   end
 
   def self.delete_all()

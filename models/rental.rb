@@ -34,8 +34,7 @@ class Rental
   end
 
   def self.find(id)
-    sql = "SELECT * FROM rentals
-    WHERE id = $1"
+    sql = "SELECT * FROM rentals WHERE id = $1"
     values = [id]
     results = SqlRunner.run(sql, values)
     return Rental.new(results.first)

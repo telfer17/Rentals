@@ -32,6 +32,14 @@ end
 
 post '/customers/:id/delete' do
   customer = Customer.find(params[:id])
+  cars = customer.find_car()
+  #find all cars currently rented by customer
+  for car in cars
+    car.return_car()
+  end
+  #loop through that array of cars
+  #set the availability of each car back to available
+  #update the car in the database
   customer.delete()
   redirect ("/customers")
 end

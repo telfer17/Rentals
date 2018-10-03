@@ -56,7 +56,7 @@ class Car
     updated_status = SqlRunner.run(sql, values)
   end
 
-  def return_car(id)
+  def return_car()
     sql = "UPDATE cars SET status = 'available' WHERE id = $1"
     values = [@id]
     updated_status = SqlRunner.run(sql, values)
