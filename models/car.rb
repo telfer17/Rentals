@@ -51,19 +51,19 @@ class Car
     SqlRunner.run(sql)
   end
 
-  def rent_car
+  def rent_car()
     sql = "UPDATE cars SET status = 'rented' WHERE id = $1"
     values = [@id]
     updated_status = SqlRunner.run(sql, values)
   end
 
-  def return_car
-    sql = "UPDATE cars SET status = $1"
-    values = ['available']
+  def return_car(id)
+    sql = "UPDATE cars SET status = 'available' WHERE id = $1"
+    values = [@id]
     updated_status = SqlRunner.run(sql, values)
   end
 
-  def delete()
+  def self.delete(id)
     sql = "DELETE FROM cars
     WHERE id = $1"
     values = [@id]

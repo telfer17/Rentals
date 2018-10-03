@@ -1,16 +1,18 @@
 <h1>Cars</h1>
 
-<h3>Add New Car</h3>
+<h3>Amend Cars</h3>
 
 <p class="btn--wrapper">
   <a class="btn btn--action" href="/cars/new">Create new car</a>
 </p>
+<br>
 
 <table>
   <tr>
     <th>Make</th>
     <th>Features</th>
     <th>Status</th>
+    <th>Remove Stock</th>
     <th>Image</th>
   </tr>
   <% for car in @cars %>
@@ -18,7 +20,11 @@
     <td><%= car.make %></td>
     <td><%= car.features %></td>
     <td><%= car.status %></td>
+    <td><form action="/cars/<%= car.id %>/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="Delete" />
+    </form></td>
     <td class="car_image"><img src="<%= car.image %>"/></td>
   </tr>
   <% end %>
+
 </table>

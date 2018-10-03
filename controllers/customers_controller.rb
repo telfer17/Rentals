@@ -10,16 +10,27 @@ end
 
 get '/customers/new' do
   @customers = Customer.all
-  erb(:"customers/new")
+  erb (:"customers/new")
+end
+
+get '/customers/:id/edit' do
+  @customer = Customer.find(params[:id])
+  erb (:"customers/edit")
+end
+
+post '/customers/:id' do
+  @customers = Customer.new(params)
+  @customers.update()
+  redirect ("/customers")
 end
 
 post '/customers' do
   customer = Customer.new(params)
   customer.save()
-  redirect to("/customers")
+  redirect ("/customers")
 end
 
 post '/customers/:id/delete' do
   Customer.delete(params[:id])
-  redirect to("/customers")
+  redirect ("/customers")
 end

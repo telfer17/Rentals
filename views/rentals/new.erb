@@ -16,7 +16,7 @@
     <select name="car_id">
       <option disabled selected value> -- choose car -- </option>
       <% for car in @cars %>
-      <% if car.status == "available" %>
+      <% if car.status == "available".upcase %>
       <option value="<%= car.id %>"><%= car.make %></option>
       <% end %>
       <% end %>
