@@ -1,7 +1,7 @@
 body {
   background: white url('/images/white_background.jpg');
   background-size: 100%;
-  
+
   font-family: 'Gill Sans / Gill Sans MT', sans-serif;
 }
 
@@ -29,6 +29,7 @@ nav {
   padding: 0px;
   margin: 0px;
   padding-right: 25px;
+  color: #6a6f77;
 }
 
 nav ul li {
@@ -106,4 +107,44 @@ select {
 :focus {
   outline-color: transparent;
   outline-style: none;
+}
+
+/* BUTTONS */
+
+.btn {
+  border:0px none;
+  border-radius: 2%;
+  padding: 5px 5px;
+  color: #d1d1d1;
+  background-color: #7B7C7E;
+  cursor:pointer;
+}
+
+.btn--delete {
+  background-color: #d10e1e;
+  border-radius: 2%;
+}
+
+.btn--delete:hover {
+  background-color: #a31515;
+}
+
+.btn--action {
+  color: #d1d1d1;
+}
+
+.btn--action:hover {
+  background-color: #4f5051;
+}
+
+#link1 {
+  color: #d1d1d1;
+}
+
+#link2 {
+  color: #d1d1d1;
+}
+
+#link3 {
+  color: #d1d1d1;
 }

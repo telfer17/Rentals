@@ -1,9 +1,7 @@
 <h1>Current Rentals</h1>
 
-<h3>New Rental</h3>
-
-<p class="btn--wrapper">
-  <a class="btn btn--action" href="/rentals/new">Create new rental</a>
+<p>
+  <a class="btn btn--action" id="link3" href="/rentals/new">Create new rental</a>
 </p>
 <br>
 
@@ -20,7 +18,7 @@
     <td><a href="/cars"><%= rental.car.make %></a></td>
     <td>|</td>
     <td><form action="/rentals/<%= rental.id %>/delete" method="POST">
-      <input class="btn btn--returns" type="submit" value="Return Vehicle" />
+      <input class="btn btn--action" type="submit" value="Return Vehicle" />
     </form></td>
   </tr>
   <% end %>
